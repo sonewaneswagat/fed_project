@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-family:Poppins;
+        }
+        h1{
+            font-size: 50px;
+            font-family:Audiowide;
+        }
+        p{
+            font-size: 24px;
+            line-height: 50px;
+        }
+        .navbar{
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            height: 150px;
+            z-index: 1;
+
+
+        }
+        .nav{
+            display: flex;
+            justify-content: right;
+            list-style: none;
+            margin-right: 15%;
+
+        }
+        .logo {
+            flex: 1 1 auto;
+            margin-left: 10%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            font-size: 35px;
+        }
+        img{
+            width: 20%;
+        }
+        a{
+            margin: 15px;
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        a:hover{
+            color: #000;
+        }
+        .banner-area{
+            position: relative;
+            background-image: url(ss.jpg);
+            width: 100%;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .about-area, .port-area, .service-area, .contact-area{
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 100%;
+            height: 800px;
+        }
+        .text-part{
+            width: 100%;
+            height: 900px;
+            text-align:center;
+
+
+        }        
+        .login-part{
+            width:200%;
+            height:80%;
+            text-align: center;
+        }
+        .contact-part{
+            width:200%;
+            height:80%;
+            float:center;
+            background-color: #eff5f5;
+            text-align:center;
+        }
+
+        .about-area{
+            background-color: #fefefe;
+            float:center;
+
+        }
+        .port-area{
+            background-color: #262626;
+            color: #fff;
+        }
+        .service-area{
+            background-color: #fefefe;
+            margin-top:10%;
+
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            padding: 16px;
+            background-color: white;
+
+
+        }
+        input[type=text], input[type=password] {
+            width: 300px;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+    </style>
+    <script>
+//        function register() {
+//            alert("Registration Successful !!! ");
+//        }
+        function validate() {
+
+            var a = document.form1.Email_id.value;
+            var b = document.form1.Password.value;
+            var c = document.form1.Name.value;
+            var d = document.form1.Roll_no.value;
+            var e = document.form1.Mobile_no.value;
+            var f = document.form1.Course.value;
+            var g = document.form1.DOB.value;
+            var h = document.form1.Address.value;
+
+            if (a == "" || a == null) {
+                alert("Email_id can't be empty !!");
+            }
+            if (a.indexOf('@') <= 0) {
+
+                alert("Invalid @ position in email_id !!");
+
+                return false;
+            }
+            if (a.charAt(a.length - 4) !== '.') {
+
+                alert("Invalid . position 4 in email_id!!");
+
+                return false;
+            }
+            if (b == "" || b.length < 8) {
+
+                alert("Invalid Password! minimum length required is 8 !!");
+
+                return false;
+            }
+
+            if (c == "" || c == null) {
+
+                alert("Name can't be empty !!");
+                return false;
+            }
+            if (d == "" || d == null) {
+                alert("Roll No. can't be empty !!");
+                return false;
+            }
+            if (e == "" || e == null) {
+
+                alert("Mobile No. can't be empty !!");
+                return false;
+            }
+            if (e.length < 10) {
+
+                alert("Length of Mobile No. must be 10 !!");
+                return false;
+            }
+            if (f == "" || f == null) {
+
+                alert("Course can't be empty !!");
+                return false;
+            }
+            if (g == "" || g == null) {
+
+                alert("Date_Of_Birth can't be empty !!");
+                return false;
+            }
+            if (h == "" || h == null) {
+
+                alert("Address can't be empty !!");
+                return false;
+            }
+
+
+
+            alert("Registration Successful..!! ");
+            window.location.reload();
+
+
+        }
+
+    </script>
+
+    <body>
+        <div class="navbar">
+            <a class="logo" href="#">Welcome</a>
+            <ul class="nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Registration</a></li>
+
+                <li><a href="#services">Login</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <section class="banner-area" id="home">
+        </section>
+
+        <section class="about-area" id="about">
+            <div class="text-part">
+                <form  name="form1"  action="http://localhost:8080/Railway/name.jsp"> 
+
+                    <div class="container"><br><br>
+                        <h1 style="text-align:center;">Student Registration Form </h1>
+
+                        <hr>
+                        <label for="name"><b>Name </b></label>&nbsp
+                        <input type="text" placeholder="Enter Your Name " name="Name" required><br>
+
+                        <label for="number"><b>Roll no </b></label>&nbsp
+                        <input type="text" placeholder="Enter Your Roll No:  " name="Roll_no" required><br>
+
+                        <label for="email"><b>Email</b></label>&nbsp
+                        <input type="text" placeholder="Enter Email" name="Email_id" id="email" required>
+
+                        <br><label for="psw"><b>Password</b></label>&nbsp
+                        <input type="password" placeholder="Enter Password" name="Password" id="psw" required><br>
+
+                        <label for="dob"><b>DOB </b></label>&nbsp
+                        <input type="text" placeholder="Format :DD/MM/YYYY "  " name="DOB"><br>
+
+                        <label for="address"><b>Address </b></label>&nbsp
+                        <input type="text" placeholder="Enter Your Address  " name="Address"><br>
+
+                        <p><b>Please select your gender:</b></p>
+                        <input type="radio" id="male" name="Gender" value="male">
+                        <label for="male">Male</label>&nbsp
+                        <input type="radio" id="female" name="Gender" value="female">
+                        Female&nbsp
+                        <input type="radio" id="other" name="Gender" value="other">
+                        <label for="other">Other</label><br>  
+
+                        <label for="number"><b>Mobile No </b></label>&nbsp
+                        <input type="text" placeholder="Enter Your Mobile No:  " name="Mobile_no"><br>
+
+                        <label for="course"><b>Course </b></label>&nbsp
+                        <input type="text" placeholder="Enter Course:  " name="Course"><br>
+
+                        <button type="submit" class="registerbtn" name="submit" Onclick="validate()" >Register</button>&nbsp&nbsp<button type="reset" class="registerbtn">Reset</button>
+                    </div>
+
+                </form>
+
+            </div>  
+
+        </section>
+
+        <section class="service-area" id="services">
+            <div class="login-part"><hr>
+                <form action="http://localhost:8080/Railway/login.jsp">
+                    <div class="container">
+                        <h1 style="text-align:center;"> Login form </h1>
+
+
+
+                        <label for="number"><b>Roll no </b></label>
+                        <input type="text" placeholder="Enter Your Roll No:  " name="Roll_no" required><br>
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="Password" id="psw" required><br> 
+                        <button type="submit" class="registerbtn" name="submit">Login</button>&nbsp&nbsp<button type="reset" class="registerbtn">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section>
+            <center>
+                <form action="http://localhost:8080/Railway/data.jsp">
+                    <button type="submit">View</button>
+            </center>
+        </form>
+
+    </section>
+    <section class="contact-area" id="contact">
+        <div class="contact-part"><hr>
+            <h1 style="color:black;">Contact Us</h1>
+            <p>Phone no.=6261469397<br></p>
+            <p>Mobile no.=7898921889<br></p>
+        </div>
+    </section>
+</body>
+</html>
